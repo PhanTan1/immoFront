@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="card-header bg-info text-white">
+      <h1>Houses</h1>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div
+          class="card align-items-center"
+          style="width: 300px; margin: 5px"
+          *ngFor="let item of data"
+        >
+          <img
+            class="card-img-top center"
+            [src]="item.imageUrl"
+            [title]="item.title"
+            [style.width.px]="'300'"
+            [style.height.px]="'400'"
+            [style.margin.px]="'5'"
+          />
+          <div class="card-body text-center">
+            <h4 class="card-title">{{ item.title }}</h4>
+            <h2 class="card-text">
+              {{ item.price | currency: "EUR":"symbol":"1.2-2" }}
+            </h2>
+            <a class="text text-primary"> Show Details </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
